@@ -1,0 +1,14 @@
+[DEFAULT]
+user=<<USER_OCID>>
+fingerprint=<<FINGERPRINT>>
+tenancy=<<TENANCY_OCID>>
+region=ap-mumbai-1
+key_file=../.oci/<<KEY_FILE>>.pem
+[IAD]
+user=<<USER_OCID>>
+fingerprint=<<FINGERPRINT>>
+tenancy=<<TENANCY_OCID>>
+region=ap-mumbai-1
+key_file=../.oci/<<KEY_FILE>>.pem
+oracle.compartment-id=<<COMPARTMENT_OCID>>
+registry=iad.ocir.io/<<TENANCY_NAME>>/<<OCI_FUNCTIONS_REPO>>
