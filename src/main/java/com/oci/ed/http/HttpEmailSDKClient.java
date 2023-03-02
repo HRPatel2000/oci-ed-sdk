@@ -4,6 +4,7 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
+import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.submitemail.EmailClient;
 import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
 import com.oracle.bmc.submitemail.responses.SubmitEmailResponse;
@@ -29,6 +30,9 @@ public class HttpEmailSDKClient {
             System.out.println("HttpEmailSender@submitHttpEmail@HttpResponseCode >>> " + submitEmailResponse.get__httpStatusCode__());
             System.out.println("HttpEmailSender@submitHttpEmail@MessageId >>> " + submitEmailResponse.getEmailSubmittedResponse().getMessageId());
             System.out.println("HttpEmailSender@submitHttpEmail@EnvelopeId >>> " + submitEmailResponse.getEmailSubmittedResponse().getEnvelopeId());
+        } catch (BmcException e) {
+            System.out.println("HttpEmailSender@submitHttpEmail@BMCError >>> " + e);
+            responseCode = e.getStatusCode();
         } catch (Exception e) {
             System.out.println("HttpEmailSender@submitHttpEmail@Error >>> " + e);
         }
