@@ -1,10 +1,10 @@
 # oci-ed-sdk
 
-##Goal
+## Goal
 
 Send Email via Http Send API from OCI Java Function
 
-##Prerequisites
+## Prerequisites
 
 - OCI Cloud Account
   - Setup Email Delivery Service Resources,
@@ -24,7 +24,7 @@ key_file=~/.oci/oci_api_key.pem
 - This completes the Authentication Setup and your OCI CLI is ready to use Http Send API feature
 
 
-##Setup
+## Setup
 
 Install Required OCI Email Preview SDK Libraries/JARs
 - If you are Oracle Internal Team and within Oracle Network, Just take the /lib/settings.xml and either replace it to your ~/.m2/settings.xml or take the internal SNAPSHOT repository from it and put into your ~/.m2/settings.xml
@@ -35,7 +35,7 @@ cd lib/
 ./ociSDKInstall.sh
 ```
 
-##Configuration
+## Configuration
 
 Instructions
 - Clone the project
@@ -44,7 +44,7 @@ Instructions
 - Change your OCI Compartment OCID in HttpEmailSender.java (under COMPARTMENT_ID variable)
 - Change your Email Request Body in HttpEmailSender (TO, CC, BCC, SUBJECT, REQUEST BODY etc.)
 
-##Build and Test
+## Build and Test
 
 - Build the Project
 ```java
@@ -52,7 +52,7 @@ mvn clean package
 ```
 - This would run the Unit Test which would send email via Http Send API
 
-##Send OCI Email using Http Send API from OCI Java Function
+## Send OCI Email using Http Send API from OCI Java Function
 
 - Prereqiusite - Working OCI Function with proper permissions and policies
 - Deploy this java code to your OCI Function and then invoke it
