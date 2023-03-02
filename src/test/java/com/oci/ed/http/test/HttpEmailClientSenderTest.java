@@ -55,7 +55,7 @@ class HttpEmailClientSenderTest {
 
     @Test
     @DisplayName("Should not send email via Http Endpoint when Sender is Unauthorized")
-    void shouldThrow435ForUnAuthorizedApprovedSender() {
+    void shouldThrow404ForUnAuthorizedApprovedSender() {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         SubmitEmailDetails submitEmailDetails = SubmitEmailDetails.builder()
