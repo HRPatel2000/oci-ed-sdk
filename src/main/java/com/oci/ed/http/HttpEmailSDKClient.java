@@ -6,8 +6,11 @@ import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.submitemail.EmailClient;
+import com.oracle.bmc.submitemail.model.EmailAddress;
 import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
 import com.oracle.bmc.submitemail.responses.SubmitEmailResponse;
+
+import java.util.List;
 
 public class HttpEmailSDKClient {
 
@@ -27,6 +30,10 @@ public class HttpEmailSDKClient {
 
             SubmitEmailResponse submitEmailResponse = emailClient.submitEmail(submitEmailRequest);
             responseCode = submitEmailResponse.get__httpStatusCode__();
+            List<EmailAddress> suppressedRecipients = submitEmailResponse.getEmailSubmittedResponse().getSuppressedRecipients();
+            for (EmailAddress suppressedEmail : suppressedRecipients) {
+                System.out.println("HttpEmailSender@submitHttpEmail@SuppressedEmail >>> " + suppressedEmail.getEmail());
+            }
             System.out.println("HttpEmailSender@submitHttpEmail@HttpResponseCode >>> " + submitEmailResponse.get__httpStatusCode__());
             System.out.println("HttpEmailSender@submitHttpEmail@MessageId >>> " + submitEmailResponse.getEmailSubmittedResponse().getMessageId());
             System.out.println("HttpEmailSender@submitHttpEmail@EnvelopeId >>> " + submitEmailResponse.getEmailSubmittedResponse().getEnvelopeId());
