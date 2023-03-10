@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class HttpSubmitEmailRequest {
 
-    private static final String COMPARTMENT_ID = "<<COMPARTMENT_ID>>";
+    private static final String COMPARTMENT_ID = "ocid1.tenancy.oc1..aaaaaaaapgqj5fjeku52qogywp4agshdscgog4gaeuk5uxfccyx5fofpg2oa";
 
     public SubmitEmailRequest buildHttpSubmitEmailRequest() {
         System.out.println("HttpEmailSender@buildEmailRequest@CompartmentId >>> " + COMPARTMENT_ID);

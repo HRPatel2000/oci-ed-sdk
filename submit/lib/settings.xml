@@ -1,0 +1,22 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <profiles>
+        <profile>
+            <id>oci-preview-sdk</id>
+            <repositories>
+	        <repository>
+	            <id>oci-preview-sdk-releases</id>
+	            <name>OCI Preview SDK Repository</name>
+	            <url>https://artifactory-builds.oci.oraclecorp.com/libs-snapshot</url>
+	            <releases>
+	                <enabled>true</enabled>
+	                <updatePolicy>never</updatePolicy>
+	            </releases>
+	            <snapshots>
+	                <enabled>true</enabled>
+	            </snapshots>
+	        </repository>
+	    </repositories>
+        </profile>
+    </profiles>
+</settings>

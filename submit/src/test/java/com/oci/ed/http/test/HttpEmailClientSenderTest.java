@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
 class HttpEmailClientSenderTest {
 
     HttpEmailSender httpEmailSender;
-    private static final String COMPARTMENT_ID = "<<COMPARTMENT_ID>>";
+    private static final String COMPARTMENT_ID = "ocid1.tenancy.oc1..aaaaaaaapgqj5fjeku52qogywp4agshdscgog4gaeuk5uxfccyx5fofpg2oa";
 
     @BeforeEach
     void setUp() {
