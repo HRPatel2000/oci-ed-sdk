@@ -7,14 +7,14 @@ import org.junit.jupiter.api.TestMethodOrder;
 
 import java.util.List;
 
+import static com.oci.ed.opens.OCITenancyConfig.COMPARTMENT_ID;
+import static com.oci.ed.opens.OCITenancyConfig.TRACK_CONFIG_SCOPE_ID;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class OpensEmailSDKClientTest {
 
     private OpensEmailSDKClient opensEmailSDKClient = new OpensEmailSDKClient();
-    private static final String COMPARTMENT_ID = "ocid1.tenancy.oc1..aaaaaaaapgqj5fjeku52qogywp4agshdscgog4gaeuk5uxfccyx5fofpg2oa";
-    private static final String TRACK_CONFIG_SCOPE_ID = "ocid1.emaildomain.oc1.iad.amaaaaaaooyoulaa34fycy4aht2rg2yr665ms5xcm3o2pzemn5rgy7xxrpya";
     private static String TRACK_CONFIG_ID = null;
 
     @Test
