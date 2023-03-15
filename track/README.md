@@ -2,7 +2,7 @@
 
 ## Goal
 
-Create, Update, Delete and Get/List Opens Tracking via Java SDK
+Create, Update, Delete and Get/List Opens & Clicks Track Config via Java SDK
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ Instructions
 - Clone the project
 - Change your OCI config File Path in OpensEmailSDKClient.java (under CONFIG_LOCATION variable) if it is different than default - ".oci/config"
 - Change your OCI Profile in OpensEmailSDKClient.java (under CONFIG_PROFILE variable)
-- Change your OCI COMPARTMENT_ID and TRACK_CONFIG_SCOPE_ID in OCITenancyConfig.java 
+- Change your OCI REGION, ENDPOINT, COMPARTMENT_ID and TRACK_CONFIG_SCOPE_ID in OCITenancyConfig.java 
 
 ## Build and Test
 
@@ -51,14 +51,14 @@ Instructions
 mvn clean package
 ```
 - This would run Test cases mentioned below in exact order as mentioned,
-  - Create Opens Tracking Configuration
+  - Create Opens & Clicks Tracking Configuration
   - Get Tracking Configuration by ID
-  - Update Opens Tracking Configuration
-  - List Opens Tracking Configurations by Email Domain
-  - List Opens Tracking Configurations by Compartment ID
-  - Delete Opens Tracking Configuration by ID
+  - Update Opens & Clicks Tracking Configuration
+  - List Opens & Clicks Tracking Configurations by Email Domain
+  - List Opens & Clicks Tracking Configurations by Compartment ID
+  - Delete Opens & Clicks Tracking Configuration by ID
 
-## Use OCI Email Opens APIs from OCI Java Function
+## Use OCI Email Opens & Clicks APIs from OCI Java Function
 
 - Prereqiusite - Working OCI Function with proper permissions and policies
 - Deploy this java code to your OCI Function and then invoke it

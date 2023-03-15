@@ -1,4 +1,4 @@
-package com.oci.ed.opens;
+package com.oci.ed.track;
 
 public class TrackConfigResponse {
     int httpStatusCode = -1;
