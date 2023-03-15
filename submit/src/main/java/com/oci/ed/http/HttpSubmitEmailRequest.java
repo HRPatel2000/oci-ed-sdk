@@ -9,9 +9,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HttpSubmitEmailRequest {
+import static com.oci.ed.OCITenancyConfig.COMPARTMENT_ID;
 
-    private static final String COMPARTMENT_ID = "ocid1.tenancy.oc1..aaaaaaaapgqj5fjeku52qogywp4agshdscgog4gaeuk5uxfccyx5fofpg2oa";
+public class HttpSubmitEmailRequest {
 
     public SubmitEmailRequest buildHttpSubmitEmailRequest() {
         System.out.println("HttpEmailSender@buildEmailRequest@CompartmentId >>> " + COMPARTMENT_ID);

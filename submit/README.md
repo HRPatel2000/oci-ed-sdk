@@ -41,7 +41,7 @@ Instructions
 - Clone the project
 - Change your OCI config File Path in HttpEmailSDKClient.java (under CONFIG_LOCATION variable) if it is different than default - ".oci/config"
 - Change your OCI Profile in HttpEmailSDKClient.java (under CONFIG_PROFILE variable)
-- Change your OCI Compartment OCID in HttpEmailClientSenderTest.java & HttpSubmitEmailRequest.java (under COMPARTMENT_ID variable)
+- Change your OCI REGION, ENDPOINT and COMPARTMENT_ID in OCITenancyConfig.java
 - Change your Email Request Body in HttpEmailSender (TO, CC, BCC, SUBJECT, REQUEST BODY etc.)
 
 ## Build and Test

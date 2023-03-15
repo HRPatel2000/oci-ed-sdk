@@ -1,7 +1,6 @@
 package com.oci.ed.http;
 
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.model.BmcException;
@@ -10,7 +9,11 @@ import com.oracle.bmc.submitemail.model.EmailAddress;
 import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
 import com.oracle.bmc.submitemail.responses.SubmitEmailResponse;
 
+import java.io.IOException;
 import java.util.List;
+
+import static com.oci.ed.OCITenancyConfig.REGION;
+import static com.oci.ed.OCITenancyConfig.HTTP_SEND_ENDPOINT;
 
 public class HttpEmailSDKClient {
 
@@ -20,13 +23,7 @@ public class HttpEmailSDKClient {
     public int submit(SubmitEmailRequest submitEmailRequest) {
         int responseCode = -1;
         try {
-            final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
-            final AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(configFile);
-            EmailClient emailClient = EmailClient.builder()
-                    .region(Region.US_ASHBURN_1)
-                    .endpoint("https://cell0.submit.email.us-ashburn-1.oci.oraclecloud.com")
-                    .build(provider);
-            System.out.println("HttpEmailSender@getEmailClient@SmtpEndpoint >>> " + emailClient.getEndpoint());
+            EmailClient emailClient = getEmailClient();
 
             SubmitEmailResponse submitEmailResponse = emailClient.submitEmail(submitEmailRequest);
             responseCode = submitEmailResponse.get__httpStatusCode__();
@@ -44,5 +41,17 @@ public class HttpEmailSDKClient {
             System.out.println("HttpEmailSender@submitHttpEmail@Error >>> " + e);
         }
         return responseCode;
+    }
+
+    private EmailClient getEmailClient() throws IOException {
+        final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
+        final AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(configFile);
+        EmailClient emailClient = EmailClient.builder()
+                .region(REGION)
+                .endpoint(HTTP_SEND_ENDPOINT)
+                .build(provider);
+
+        System.out.println("TrackEmailSDKClient@createTrackConfigId@Endpoint >>> " + emailClient.getEndpoint());
+        return emailClient;
     }
 }
