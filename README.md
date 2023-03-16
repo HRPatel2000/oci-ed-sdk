@@ -2,7 +2,7 @@
 
 ## Goal
 
-Send Email via Http Send API from OCI Java Function
+Provide Comprehensive Examples for all OCI Email Delivery Control Plane and Data Plane APIs for major Programming Languages such as Java, Python, Go, Ruby etc. for use in client applications as well as from OCI Functions
 
 ## Prerequisites
 
@@ -10,6 +10,8 @@ Send Email via Http Send API from OCI Java Function
   - Setup Email Delivery Service Resources,
     - Create Email Domain
     - Create Approved Sender
+    - Enable Accepted and Relayed Logs on your Email Domain
+
 
 - Setup OCI Authentication
   - OCI CLI requires active OCI Cloud account. Please visit OCI Cloud Website to signup if you haven't yet.
@@ -39,10 +41,10 @@ cd lib/
 
 Instructions
 - Clone the project
-- Change your OCI config File Path in HttpEmailSDKClient.java (under CONFIG_LOCATION variable) if it is different than default - ".oci/config"
-- Change your OCI Profile in HttpEmailSDKClient.java (under CONFIG_PROFILE variable)
-- Change your OCI Compartment OCID in HttpEmailClientSenderTest.java & HttpSubmitEmailRequest.java (under COMPARTMENT_ID variable)
-- Change your Email Request Body in HttpEmailSender (TO, CC, BCC, SUBJECT, REQUEST BODY etc.)
+- Go to the Feature project you would like to reference. Below is the list of supported for now,
+  - track/ (For Opens & Clicks Tracking Examples)
+  - submit/ (For Http Send API Examples)
+- Change your OCI REGION, ENDPOINT, COMPARTMENT_ID and Other Config in OCITenancyConfig.java
 
 ## Build and Test
 
@@ -50,9 +52,9 @@ Instructions
 ```java
 mvn clean package
 ```
-- This would run the Unit Test which would send email via Http Send API
+- This would run various Unit Tests for the feature   
 
-## Send OCI Email using Http Send API from OCI Java Function
+## Use this Features from OCI Java Function
 
 - Prereqiusite - Working OCI Function with proper permissions and policies
 - Deploy this java code to your OCI Function and then invoke it
