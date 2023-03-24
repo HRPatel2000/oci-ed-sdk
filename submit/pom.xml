@@ -27,8 +27,8 @@
     <dependencies>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
-            <artifactId>oci-java-sdk-email</artifactId>
-            <version>3.2.4-preview1-SNAPSHOT</version>
+            <artifactId>oci-java-sdk-shaded-full</artifactId>
+            <version>3.8.1-preview1-20230320.142404-3</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>

@@ -1,6 +1,6 @@
 package com.oci.ed.http;
 
-import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
+import com.oracle.bmc.emaildataplane.requests.SubmitEmailRequest;
 
 public class HttpEmailSender {
 

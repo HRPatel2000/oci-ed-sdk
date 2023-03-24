@@ -1,10 +1,10 @@
 package com.oci.ed.http.test;
 
 import com.oci.ed.http.HttpEmailSender;
-import com.oracle.bmc.submitemail.model.EmailAddress;
-import com.oracle.bmc.submitemail.model.Recipients;
-import com.oracle.bmc.submitemail.model.SubmitEmailDetails;
-import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
+import com.oracle.bmc.emaildataplane.model.EmailAddress;
+import com.oracle.bmc.emaildataplane.model.Recipients;
+import com.oracle.bmc.emaildataplane.model.SubmitEmailDetails;
+import com.oracle.bmc.emaildataplane.requests.SubmitEmailRequest;
 import org.apache.commons.io.IOUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -48,7 +48,7 @@ class HttpEmailClientSenderTest {
                                 .name("OCI ED Support")
                                 .build()))
                         .build())
-                .from(EmailAddress.builder()
+                .sender(EmailAddress.builder()
                         .email("abc@test.com")
                         .name("OCI ED Support")
                         .build())
@@ -76,7 +76,7 @@ class HttpEmailClientSenderTest {
                                 .name("OCI ED Support")
                                 .build()))
                         .build())
-                .from(EmailAddress.builder()
+                .sender(EmailAddress.builder()
                         .email("billionair@oci.com")
                         .name("OCI ED Support")
                         .build())
@@ -105,7 +105,7 @@ class HttpEmailClientSenderTest {
                                 .name("OCI ED Support")
                                 .build()))
                         .build())
-                .from(EmailAddress.builder()
+                .sender(EmailAddress.builder()
                         .email("abc@test.com")
                         .name("OCI ED Support")
                         .build())
@@ -147,7 +147,7 @@ class HttpEmailClientSenderTest {
                                 .name("OCI ED Support")
                                 .build()))
                         .build())
-                .from(EmailAddress.builder()
+                .sender(EmailAddress.builder()
                         .email("abc@test.com")
                         .name("OCI ED Support")
                         .build())

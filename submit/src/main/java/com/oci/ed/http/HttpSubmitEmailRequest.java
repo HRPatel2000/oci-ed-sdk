@@ -1,9 +1,9 @@
 package com.oci.ed.http;
 
-import com.oracle.bmc.submitemail.model.EmailAddress;
-import com.oracle.bmc.submitemail.model.Recipients;
-import com.oracle.bmc.submitemail.model.SubmitEmailDetails;
-import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
+import com.oracle.bmc.emaildataplane.model.EmailAddress;
+import com.oracle.bmc.emaildataplane.model.Recipients;
+import com.oracle.bmc.emaildataplane.model.SubmitEmailDetails;
+import com.oracle.bmc.emaildataplane.requests.SubmitEmailRequest;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -26,7 +26,7 @@ public class HttpSubmitEmailRequest {
                                 .name("OCI ED Support")
                                 .build()))
                         .build())
-                .from(EmailAddress.builder()
+                .sender(EmailAddress.builder()
                         .email("abc@test.com")
                         .name("OCI ED Support")
                         .build())

@@ -27,7 +27,7 @@ class TrackEmailSDKClientTest {
         TRACK_CONFIG_ID = trackConfigResponse.getTrackConfigId();
         assertNotNull(trackConfigResponse.getTrackConfigId());
         try {
-            Thread.sleep(30000);
+            Thread.sleep(240000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

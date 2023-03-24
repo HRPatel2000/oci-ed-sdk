@@ -4,16 +4,16 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
 import com.oracle.bmc.model.BmcException;
-import com.oracle.bmc.submitemail.EmailClient;
-import com.oracle.bmc.submitemail.model.EmailAddress;
-import com.oracle.bmc.submitemail.requests.SubmitEmailRequest;
-import com.oracle.bmc.submitemail.responses.SubmitEmailResponse;
+import com.oracle.bmc.emaildataplane.EmailDPClient;
+import com.oracle.bmc.emaildataplane.model.EmailAddress;
+import com.oracle.bmc.emaildataplane.requests.SubmitEmailRequest;
+import com.oracle.bmc.emaildataplane.responses.SubmitEmailResponse;
 
 import java.io.IOException;
 import java.util.List;
 
 import static com.oci.ed.OCITenancyConfig.REGION;
-import static com.oci.ed.OCITenancyConfig.HTTP_SEND_ENDPOINT;
+import static com.oci.ed.OCITenancyConfig.TRACK_ENDPOINT;
 
 public class HttpEmailSDKClient {
 
@@ -23,7 +23,7 @@ public class HttpEmailSDKClient {
     public int submit(SubmitEmailRequest submitEmailRequest) {
         int responseCode = -1;
         try {
-            EmailClient emailClient = getEmailClient();
+            EmailDPClient emailClient = getEmailClient();
 
             SubmitEmailResponse submitEmailResponse = emailClient.submitEmail(submitEmailRequest);
             responseCode = submitEmailResponse.get__httpStatusCode__();
@@ -43,12 +43,12 @@ public class HttpEmailSDKClient {
         return responseCode;
     }
 
-    private EmailClient getEmailClient() throws IOException {
+    private EmailDPClient getEmailClient() throws IOException {
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
         final AuthenticationDetailsProvider provider = new ConfigFileAuthenticationDetailsProvider(configFile);
-        EmailClient emailClient = EmailClient.builder()
+        EmailDPClient emailClient = EmailDPClient.builder()
                 .region(REGION)
-                .endpoint(HTTP_SEND_ENDPOINT)
+                .endpoint(TRACK_ENDPOINT)
                 .build(provider);
 
         System.out.println("TrackEmailSDKClient@createTrackConfigId@Endpoint >>> " + emailClient.getEndpoint());
