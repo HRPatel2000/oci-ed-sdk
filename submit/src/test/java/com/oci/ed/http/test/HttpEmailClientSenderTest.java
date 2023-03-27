@@ -22,6 +22,7 @@ import static org.junit.Assert.assertEquals;
 class HttpEmailClientSenderTest {
 
     HttpEmailSender httpEmailSender;
+    private static String CONFIG_PROFILE = "IAD";
 
     @BeforeEach
     void setUp() {
@@ -59,7 +60,7 @@ class HttpEmailClientSenderTest {
         SubmitEmailRequest submitEmailRequest = SubmitEmailRequest.builder()
                 .submitEmailDetails(submitEmailDetails)
                 .build();
-        assertEquals(200, httpEmailSender.submitSDKEmail(submitEmailRequest));
+        assertEquals(200, httpEmailSender.submitSDKEmail(CONFIG_PROFILE, submitEmailRequest));
     }
 
     @Test
@@ -88,7 +89,7 @@ class HttpEmailClientSenderTest {
                 .submitEmailDetails(submitEmailDetails)
                 .build();
 
-        assertEquals(404, httpEmailSender.submitSDKEmail(submitEmailRequest));
+        assertEquals(404, httpEmailSender.submitSDKEmail(CONFIG_PROFILE, submitEmailRequest));
     }
 
     @Test
@@ -117,7 +118,7 @@ class HttpEmailClientSenderTest {
                 .submitEmailDetails(submitEmailDetails)
                 .build();
 
-        assertEquals(422, httpEmailSender.submitSDKEmail(submitEmailRequest));
+        assertEquals(422, httpEmailSender.submitSDKEmail(CONFIG_PROFILE, submitEmailRequest));
     }
 
     @Test
@@ -158,6 +159,6 @@ class HttpEmailClientSenderTest {
         SubmitEmailRequest submitEmailRequest = SubmitEmailRequest.builder()
                 .submitEmailDetails(submitEmailDetails)
                 .build();
-        assertEquals(200, httpEmailSender.submitSDKEmail(submitEmailRequest));
+        assertEquals(200, httpEmailSender.submitSDKEmail(CONFIG_PROFILE, submitEmailRequest));
     }
 }

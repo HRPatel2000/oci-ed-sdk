@@ -18,7 +18,11 @@ import static com.oci.ed.OCITenancyConfig.TRACK_ENDPOINT;
 public class HttpEmailSDKClient {
 
     private static final String CONFIG_LOCATION = ".oci/config";
-    private static final String CONFIG_PROFILE = "IAD";
+    private static String CONFIG_PROFILE = "IAD";
+
+    public HttpEmailSDKClient(String region) {
+        CONFIG_PROFILE = region;
+    }
 
     public int submit(SubmitEmailRequest submitEmailRequest) {
         int responseCode = -1;
